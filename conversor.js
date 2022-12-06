@@ -13,16 +13,26 @@ function Converter(tempe, tipo){
     if(tipo.value == 'Celsius'){
         tempe = parseFloat(tempe);
         tempe = (tempe-32)*5/9;
-        tempe = Number(tempe).toFixed(2);
-        tempe = tempe+'°C';
-        return tempe;
+        if(isNaN(tempe)){
+            return ''
+        }
+        else{
+            tempe = Number(tempe).toFixed(2);
+            tempe = tempe+'°F';
+            return tempe;
+        }
     }
     if(tipo.value == 'Fahrenheit'){
         tempe = parseFloat(tempe);
         tempe = (tempe*9/5)+32;
-        tempe = Number(tempe).toFixed(2);
-        tempe = tempe+'°F';
-        return tempe;
+        if(isNaN(tempe)){
+            return ''
+        }
+        else{
+            tempe = Number(tempe).toFixed(2);
+            tempe = tempe+'°F';
+            return tempe;
+        }
     }
 
 }
